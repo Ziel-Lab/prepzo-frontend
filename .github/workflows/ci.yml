@@ -45,11 +45,7 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      # Export the application as static HTML (this uses the "output: export" setting)
-      - name: Export Application
-        run: npx next export
-
-      # Debug: List directory contents to verify that "out" folder exists
+      # Debug: List directory contents to verify that the "out" folder exists
       - name: List Directory Contents
         run: ls -la
 
