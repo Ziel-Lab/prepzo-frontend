@@ -9,7 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "test": "jest --passWithNoTests",
-    "deploy": "npx vercel --prod"
+    "deploy": "npx vercel --prod --yes"
   },
   "dependencies": {
     "animejs": "^3.2.2",
