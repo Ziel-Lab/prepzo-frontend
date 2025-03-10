@@ -237,7 +237,7 @@ const Header: React.FC<HeaderProps> = ({ staticPosition = false }) => {
                                 <a href="#">
                                   <i className="fs-8 unicon-api fw-bold"></i>
                                   <span className="border-bottom hover:border-primary duration-150">
-                                    Explore Apps
+                                    Explore Prepzo
                                   </span>
                                 </a>
                               </li>
@@ -245,7 +245,7 @@ const Header: React.FC<HeaderProps> = ({ staticPosition = false }) => {
                                 <a href="#">
                                   <i className="fs-8 unicon-airplay fw-bold"></i>
                                   <span className="border-bottom hover:border-primary duration-150">
-                                    AI Solutions
+                                    AI Interview Coach
                                   </span>
                                 </a>
                               </li>
@@ -253,7 +253,7 @@ const Header: React.FC<HeaderProps> = ({ staticPosition = false }) => {
                                 <a href="#">
                                   <i className="fs-8 unicon-cloud-lightning fw-bold"></i>
                                   <span className="border-bottom hover:border-primary duration-150">
-                                    Join Lexend Early Access
+                                    Join Prepzo Early Access
                                   </span>
                                 </a>
                               </li>
@@ -270,12 +270,12 @@ const Header: React.FC<HeaderProps> = ({ staticPosition = false }) => {
                     </li>
                     <li>
                       <a
-                        href="https://lexend-nextjs-preview.netlify.app/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <i className="icon unicon-cube fw-bold ltr:me-narrow rtl:ms-narrow text-primary dark:text-tertiary"></i>
-                        <span>All Demo Pages</span>
+                        <span>Resume Builder</span>
                       </a>
                     </li>
                   </ul>

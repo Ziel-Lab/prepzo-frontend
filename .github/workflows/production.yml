@@ -45,28 +45,12 @@ jobs:
       - name: Build Application
         run: npm run build
 
+      # Debug: List directory contents to verify that the "out" folder exists
+      - name: List Directory Contents
+        run: ls -la
+
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nextjs-build
-          path: .next
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "23.9.0"
-
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: nextjs-build
-
-      - name: Deploy Application
-        run: npm run deploy
+          path: out

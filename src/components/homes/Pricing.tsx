@@ -298,7 +298,7 @@ const Pricing: React.FC = () => {
                                   Get started
                                 </button>
                                 <p className="fs-7 fw-normal">
-                                  Billed $348 per year.
+                                  Billed $38 per year.
                                 </p>
                               </div>
                             </div>
