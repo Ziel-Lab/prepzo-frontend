@@ -19,6 +19,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import ContactModal from "@/components/modals/ContactModal";
 import NewsletterModal from "@/components/modals/NewsletterModal";
 import SearchModal from "@/components/modals/SearchModal";
+import ClientProviders from "@/components/ClientProviders";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -108,7 +109,9 @@ export default function RootLayout({ children }: RootLayoutProps): React.ReactEl
     <html lang="en" dir="ltr">
       <body>
         <Context>
+        <ClientProviders>
           <ParallaxProvider>{children}</ParallaxProvider>
+          </ClientProviders>
           <MobileMenu />
           <ContactModal />
           <NewsletterModal />
@@ -116,6 +119,7 @@ export default function RootLayout({ children }: RootLayoutProps): React.ReactEl
           <Cart />
           <BacktoTop />
         </Context>
+        <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
       </body>
     </html>
   );
