@@ -143,9 +143,6 @@ const Hero: React.FC = () => {
                         ]}
                       />
                     </span>
-                    <span className="typed-cursor" aria-hidden="true">
-                      |
-                    </span>
                   </h1>
                   <p className="fs-6 xl:fs-3 xl:px-6">
                     Unlock your{" "}
