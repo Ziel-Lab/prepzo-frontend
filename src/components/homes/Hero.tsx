@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
                     className="h3 sm:h2 md:h1 lg:display-6 lh-lg mb-1 xl:mb-2 mt-2"
                     style={{ transform: "translateY(0px)", opacity: 1 }}
                   >
-                    Discover Your AI-Powered{" "}
+                    Now Discover Your AI-Powered{" "}
                     <span
                       className="px-1 bg-primary text-tertiary dark:bg-tertiary dark:text-primary"
                       data-uc-typed="typeSpeed: 80; backSpeed: 50; backDelay: 1500; loop: true;"
