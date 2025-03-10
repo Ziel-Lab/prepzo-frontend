@@ -45,7 +45,11 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      # Debug: List directory contents to verify .next folder exists
+      # Export the application as static HTML (this uses the "output: export" setting)
+      - name: Export Application
+        run: npx next export
+
+      # Debug: List directory contents to verify that "out" folder exists
       - name: List Directory Contents
         run: ls -la
 
@@ -53,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-build
-          path: .next
+          path: out
 
   deploy:
     runs-on: ubuntu-latest
