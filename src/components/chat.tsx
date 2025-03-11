@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { Instructions } from "@/components/instructions";
 import { SessionControls } from "@/components/session-controls";
 import { ConnectButton } from "./connect-button";
 import { ConnectionState } from "livekit-client";
@@ -9,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   useConnectionState,
   useVoiceAssistant,
-  // BarVisualizer,
 } from "@livekit/components-react";
 import { ChatControls } from "@/components/chat-controls";
 import { useAgent } from "@/hooks/use-agent";
@@ -82,19 +80,6 @@ export function Chat() {
   const toggleInstructionsEdit = () =>
     setIsEditingInstructions(!isEditingInstructions);
 
-  // const renderVisualizer = () => (
-  //   <div className="flex w-full items-center">
-  //     <div className="h-[320px] mt-16 md:mt-0 lg:pb-24 w-full">
-  //       <BarVisualizer
-  //         state={state}
-  //         barCount={5}
-  //         trackRef={audioTrack}
-  //         className="w-full h-full"
-  //       />
-  //     </div>
-  //   </div>
-  // );
-
   const renderConnectionControl = () => (
     <AnimatePresence mode="wait">
       <motion.div
@@ -103,6 +88,7 @@ export function Chat() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ type: "tween", duration: 0.15, ease: "easeInOut" }}
+        className="ml-10"
       >
         {isChatRunning ? <SessionControls /> : <ConnectButton />}
       </motion.div>
@@ -110,36 +96,13 @@ export function Chat() {
   );
 
   return (
-    <div className="flex flex-col h-full overflow-hidden p-2 lg:p-4">
-      <ChatControls
+    <div className="items-center bg-black mx-auto">
+      {renderConnectionControl()}
+      {/* <ChatControls
         isEditingInstructions={isEditingInstructions}
         onToggleEdit={toggleInstructionsEdit}
-      />
-      <div className="flex flex-col flex-grow items-center lg:justify-between mt-12 lg:mt-0">
-        {/* <div className="w-full h-full flex flex-col">
-          {/* <div className="flex items-center justify-center w-full"> */}
-            {/* <div className="lg:hidden w-full">
-              {isChatRunning && !isEditingInstructions ? (
-                renderVisualizer()
-              ) : (
-                <></>
-              )}
-            </div> */}
-            {/* <div className="hidden lg:block w-full">
-              <Instructions />
-            </div> */}
-          {/* </div> */}
-          {/* <div className="grow h-full flex items-center justify-center"> */}
-            {/* <div className="w-full hidden lg:block">
-              {isChatRunning && !isEditingInstructions && renderVisualizer()}
-            </div> 
-          </div>
-        </div> */}
-
-        <div className="md:mt-2 md:pt-2 md:mb-12 max-md:fixed max-md:bottom-12 max-md:left-1/2 max-md:-translate-x-1/2 max-md:z-50 xl:fixed xl:bottom-12 xl:left-1/2 xl:-translate-x-1/2 xl:z-50">
-          {renderConnectionControl()}
-        </div>
-      </div>
+      /> */}
+      
     </div>
   );
 }

@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 import { useAgent } from "@/hooks/use-agent";
 import { useEffect, useRef, RefObject, useState } from "react";
-import { Lightbulb, MessageSquare,CircleHelp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+
 export function Transcript({
   scrollContainerRef,
   scrollButtonRef,
 }: {
-  scrollContainerRef: RefObject<HTMLElement>;
+  scrollContainerRef: RefObject<HTMLDivElement>;
   scrollButtonRef: RefObject<HTMLButtonElement>;
 }) {
   const { displayTranscriptions } = useAgent();
@@ -95,40 +96,36 @@ export function Transcript({
   }, [scrollButtonRef]);
 
   return (
-    <>
-      <div className="p-4 min-h-[300px]">
-        {displayTranscriptions.length === 0 ? (
-          <div>
-          
-
-<div className="text-center text-gray-900 text-xs mt-8">
-  
-  <p className="text-gray-400">Click Connect to enable your microphone and begin.</p>
-</div>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {displayTranscriptions.map(
-              ({ segment, participant, publication }) =>
-                segment.text.trim() !== "" && (
-                  <div
-                    key={segment.id}
-                    className={cn(
-                      "flex w-max max-w-[75%] flex-col gap-2 rounded-lg px-3 py-2 text-sm",
-                      participant?.isAgent
-                        ? "bg-neutral-100 text-[#09090B]"
-                        : "ml-auto border bg-[#00BBFF] text-[#09090B] ",
-                    )}
-                  >
-                    {segment.text.trim()}
+    <div className="p-4 mx-auto min-h-[300px]">
+      {displayTranscriptions.length === 0 ? (
+        <div className="text-center text-gray-600 mt-8">
+          <p>Click Connect to enable your microphone and begin the interview.</p>
+        </div>
+      ) : (
+        <div className="space-y-4 mb-20 mx-auto">
+          {displayTranscriptions.map(
+            ({ segment, participant, publication }) =>
+              segment.text.trim() !== "" && (
+                <div
+                  key={segment.id}
+                  className={cn(
+                    "flex flex-col gap-1 rounded-lg px-3 py-2 text-sm",
+                    participant?.isAgent
+                      ? "bg-neutral-100 text-black max-w-[75%]"
+                      : " bg-blue-300 text-black max-w-[75%]",
+                  )}
+                >
+                  <div className="text-xs font-medium">
+                    {participant?.isAgent ? "Assistant:" : "User:"}
                   </div>
-                ),
-            )}
-            {/* Invisible marker for scroll target - height 0 prevents excessive scrolling */}
-            <div ref={transcriptEndRef} style={{ height: 0 }} />
-          </div>
-        )}
-      </div>
-    </>
+                  <div>{segment.text.trim()}</div>
+                </div>
+              ),
+          )}
+          {/* Invisible marker for scroll target - height 0 prevents excessive scrolling */}
+          <div ref={transcriptEndRef} style={{ height: 0 }} />
+        </div>
+      )}
+    </div>
   );
 }

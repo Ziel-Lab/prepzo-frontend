@@ -20,6 +20,7 @@ export function ConnectButton() {
     } else {
       if (!pgState.openaiAPIKey) {
         setShowAuthDialog(true);
+        setTimeout(() => handleAuthComplete(), 100);
       } else {
         await initiateConnection();
       }
@@ -51,36 +52,24 @@ export function ConnectButton() {
 
   return (
     <>
-      <Button
+      <button
         onClick={handleConnectionToggle}
         disabled={connecting || shouldConnect}
-        className={`
-          text-sm font-semibold bg-[#00BBFF] text-black
-          relative overflow-hidden
-          before:absolute before:inset-0 before:-z-10 
-          before:bg-gradient-to-r before:from-cyan-400 before:to-blue-500
-          before:blur-md before:opacity-70 before:transform before:scale-105
-          before:transition-opacity before:duration-300
-          hover:before:opacity-90 before:rounded-md
-        `}
+        className="inline-flex items-center gap-2 px-6 py-2 h-10 text-sm font-medium bg-[#00BBFF] text-black hover:bg-[#00BBFF]/90 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {connecting || shouldConnect ? (
           <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Connecting
+            {/* <Loader2 className="h-4 w-4 animate-spin" /> */}
+            Connecting...
           </>
         ) : (
           <>
-            <Mic className="mr-2 h-4 w-4" />
+            <Mic className="h-4 w-4" />
             Connect
           </>
         )}
-      </Button>
-      <AuthDialog
-        open={showAuthDialog}
-        onOpenChange={setShowAuthDialog}
-        onAuthComplete={handleAuthComplete}
-      />
+      </button>
+      {/* {showAuthDialog && <AuthDialog />} */}
     </>
   );
 }

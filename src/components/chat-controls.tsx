@@ -16,13 +16,13 @@ export function ChatControls({
   return (
     <div className="absolute top-2 left-2 right-2 flex justify-between">
       <div className="flex gap-2">
-        <ConfigurationFormDrawer>
-          <Button variant="outline" size="icon" className="lg:hidden">
-            {/* <Settings className="h-4 w-4" /> */}
-          </Button>
-        </ConfigurationFormDrawer>
+        {/* <ConfigurationFormDrawer> */}
+          {/* <Button variant="outline" size="icon" className="lg:hidden">
+            {/* <Settings className="h-4 w-4" /> 
+          </Button> */}
+        {/* </ConfigurationFormDrawer> */}
       </div>
-      <div className="flex gap-2">
+      {/* <div className="flex gap-2"> */}
         {/* {showEditButton && (
           <Button variant="outline" size="icon" onClick={onToggleEdit}>
             {isEditingInstructions ? (
@@ -32,12 +32,12 @@ export function ChatControls({
             )}
           </Button>
         )} */}
-        <TranscriptDrawer>
-          <Button variant="outline" size="icon" className="md:hidden">
-            <MessageSquareQuote className="h-4 w-4" />
-          </Button>
-        </TranscriptDrawer>
-      </div>
+        {/* <TranscriptDrawer> */}
+          {/* <Button variant="outline" size="icon" className="md:hidden">
+            {/* <MessageSquareQuote className="h-4 w-4" /> 
+          </Button> */}
+        {/* </TranscriptDrawer> */}
+      {/* </div> */}
     </div>
   );
 }
