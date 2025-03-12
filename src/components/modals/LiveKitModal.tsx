@@ -60,7 +60,6 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
         <div className="content-container">
           {!connectionDetails ? (
             <div className="ready-container">
-              <h2>Click "Ready!" to connect with support</h2>
               <button onClick={onConnectButtonClicked} className="ready-button">
                 Ready!
               </button>
