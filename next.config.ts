@@ -1,7 +1,9 @@
+// next.config.js
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Remove or comment out the following line:
+  // output: "export",
   images: {
     unoptimized: true,
   },

@@ -1,20 +1,17 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import TyperComponent from "@/components/common/TyperComponent";
 import Image from "next/image";
-import { useEffect } from "react";
 import { useParallax } from "react-scroll-parallax";
-import React from "react";
+import LiveKitModal from "@/components/modals/LiveKitModal"; // Adjust the path if needed
 
 const Hero: React.FC = () => {
-  const parallax = useParallax({
-    scale: [0.85, 1.1],
-  });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const parallax = useParallax({ scale: [0.85, 1.1] });
 
   useEffect(() => {
-    // This effect runs once when the component mounts.
     console.log("Hero component mounted");
-    // You can add more side-effects here if needed.
   }, []);
 
   return (
@@ -37,78 +34,7 @@ const Hero: React.FC = () => {
             height={73}
             src="assets/images/vectors/marketing.svg"
           />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-72px dark:d-none"
-            style={{ top: "15%", right: "10%" }}
-            width={73}
-            height={66}
-            src="assets/images/vectors/charts-pc.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-64px dark:d-none"
-            style={{ top: "35%", right: "-1%", transform: "rotate(45deg)" }}
-            width={69}
-            height={70}
-            src="assets/images/vectors/group.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-48px dark:d-none"
-            style={{ top: "40%", left: "15%" }}
-            width={49}
-            height={60}
-            src="assets/images/vectors/idea.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-64px dark:d-none"
-            style={{ top: "30%", left: "-1%" }}
-            width={69}
-            height={70}
-            src="assets/images/vectors/group.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-72px d-none dark:d-block"
-            style={{ top: "15%", left: "10%" }}
-            width={85}
-            height={73}
-            src="assets/images/vectors/marketing-dark.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-72px d-none dark:d-block"
-            style={{ top: "15%", right: "10%" }}
-            width={73}
-            height={66}
-            src="assets/images/vectors/charts-pc-dark.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-64px d-none dark:d-block"
-            style={{ top: "35%", right: "-1%", transform: "rotate(45deg)" }}
-            width={69}
-            height={70}
-            src="assets/images/vectors/group-dark.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-48px d-none dark:d-block"
-            style={{ top: "40%", left: "15%" }}
-            width={49}
-            height={60}
-            src="assets/images/vectors/idea-dark.svg"
-          />
-          <Image
-            alt="Icon"
-            className="d-inline-block position-absolute w-64px d-none dark:d-block"
-            style={{ top: "30%", left: "-1%" }}
-            width={69}
-            height={70}
-            src="assets/images/vectors/group-dark.svg"
-          />
+          {/* Additional Image components can be added here */}
         </div>
         <div className="container max-w-xl">
           <div className="section-inner panel">
@@ -119,13 +45,11 @@ const Hero: React.FC = () => {
                   data-anime="targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: easeOutCubic; duration: 500; delay: anime.stagger(100, {start: 200});"
                 >
                   <span className="fs-7 fw-bold py-narrow px-2 border rounded-pill text-primary dark:text-tertiary">
-                    Unlock Your Interview Potential
+                    300+ happy customers
                   </span>
-                  <h1
-                    className="h3 sm:h2 md:h1 lg:display-6 lh-lg mb-1 xl:mb-2 mt-2"
-                    style={{ transform: "translateY(0px)", opacity: 1 }}
-                  >
-                    Now Discover Your AI-Powered {" "}
+                  {/* Headline with dynamic TyperComponent */}
+                  <h1 className="h3 sm:h2 md:h1 lg:display-6 lh-lg mb-1 xl:mb-2 mt-2">
+                    Your {" "}
                     <span
                       className="px-1 bg-primary text-tertiary dark:bg-tertiary dark:text-primary"
                       data-uc-typed="typeSpeed: 80; backSpeed: 50; backDelay: 1500; loop: true;"
@@ -144,12 +68,13 @@ const Hero: React.FC = () => {
                       />
                     </span>
                   </h1>
+                  <h2 className="h4 sm:h3 md:h2 lg:display-7 lh-lg mb-1 xl:mb-2">
+                    Powered by AI.
+                  </h2>
                   <p className="fs-6 xl:fs-3 xl:px-6">
-                    Unlock your{" "}
-                    <b className="dark:text-white">interview potential</b> and ace every
-                    interview with our intuitive and powerful{" "}
-                    <b className="dark:text-white">AI interview coach</b> app by Prepzo.
+                    Prepzo helps you craft <b className="dark:text-white">better applications</b>, build <b className="dark:text-white">standout resumes</b>, and make <b className="dark:text-white">career-defining moves</b>.
                   </p>
+
                   <div
                     className="vstack md:hstack justify-center gap-2 mt-3"
                     style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -157,8 +82,12 @@ const Hero: React.FC = () => {
                     <a
                       href="#"
                       className="btn btn-md xl:btn-lg btn-alt-dark border-dark px-3 lg:px-5 fw-bold contrast-shadow-sm hover:contrast-shadow"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsModalOpen(true);
+                      }}
                     >
-                      <span>Talk to Prepzo</span>
+                      ✨ Start Talking to Your AI Coach ✨
                     </a>
                   </div>
                   <div className="panel mt-3 lg:mt-4 min-w-700px text-center">
@@ -186,52 +115,7 @@ const Hero: React.FC = () => {
                           </span>
                         </div>
                       </div>
-                      <div>
-                        <div className="hstack justify-center gap-1">
-                          <span className="icon mb-narrow">
-                            <Image
-                              className="w-24px dark:d-none"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/icon-07.svg"
-                            />
-                            <Image
-                              className="w-24px d-none dark:d-block"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/dark-icon-07.svg"
-                            />
-                          </span>
-                          <span className="fs-7 fw-medium mb-narrow text-inherit">
-                            Interview Preparation Guide
-                          </span>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="hstack justify-center gap-1">
-                          <span className="icon mb-narrow">
-                            <Image
-                              className="w-24px dark:d-none"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/icon-04.svg"
-                            />
-                            <Image
-                              className="w-24px d-none dark:d-block"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/dark-icon-04.svg"
-                            />
-                          </span>
-                          <span className="fs-7 fw-medium mb-narrow text-inherit">
-                            AI- Powered Mock Interview Practice
-                          </span>
-                        </div>
-                      </div>
+                      {/* Additional columns or icons can be added here */}
                     </div>
                   </div>
                 </div>
@@ -262,6 +146,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+      {isModalOpen && <LiveKitModal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };

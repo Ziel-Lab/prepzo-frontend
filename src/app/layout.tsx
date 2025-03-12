@@ -10,7 +10,6 @@ import "@/styles/custom.scss";
 
 import "photoswipe/dist/photoswipe.css";
 import "rc-slider/assets/index.css";
-import Cart from "@/components/common/Cart";
 import anime from "animejs";
 import { usePathname } from "next/navigation";
 import MobileMenu from "@/components/headers/component/MobileMenu";
@@ -113,7 +112,6 @@ export default function RootLayout({ children }: RootLayoutProps): React.ReactEl
           <ContactModal />
           <NewsletterModal />
           <SearchModal />
-          <Cart />
           <BacktoTop />
         </Context>
       </body>
