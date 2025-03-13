@@ -7,6 +7,10 @@
   --foreground: #171717;
   --lk-va-bar-width: 72px;
   --lk-control-bar-height: unset;
+
+  /* Custom color variables for borders */
+  --surface-primary: #e5e7eb;       /* Light border color */
+  --dark-surface-primary: #374151;  /* Dark border color */
 }
 
 @theme inline {
@@ -20,9 +24,14 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Optionally swap colors in dark mode */
+    --surface-primary: #374151;
+    --dark-surface-primary: #e5e7eb;
   }
 }
 
+/* Existing project-specific classes */
 .agent-visualizer > .lk-audio-bar {
   width: 72px;
 }
@@ -32,11 +41,36 @@
 }
 
 .lk-disconnect-button {
-  @apply h-[36px] hover:bg-[#6b221a] hover:text-[white] bg-[#31100c] border-[#6b221a];
+  @apply h-[36px] hover:bg-[#6b221a] hover:text-white bg-[#31100c] border-[#6b221a];
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------- */
+/* CUSTOM MEMOJI CLASSES */
+/* ------------------- */
+
+/* Sets the width/height to 28px */
+.size-7 {
+  width: 28px;
+  height: 28px;
+}
+
+/* Light border color for default (light mode) */
+.border-surface-primary {
+  border-color: var(--surface-primary);
+}
+
+/* Dark border color for dark mode */
+.dark .dark\:border-dark-surface-primary {
+  border-color: var(--dark-surface-primary);
+}
+
+/* Ensure images are rendered as circles */
+.rounded-full {
+  border-radius: 9999px;
 }

@@ -402,3 +402,8 @@ html:not(.uc-dark) {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+.uc-video-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

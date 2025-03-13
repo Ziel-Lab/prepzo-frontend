@@ -460,33 +460,33 @@ export const panelData = [
     {
       order: "order-1 lg:order-0",
       icon: "/assets/images/custom-icons/home-8-icon-01.svg",
-      title: "Fast and Reliable",
+      title: "Instant clarity",
     },
     {
       order: "order-0",
       icon: "/assets/images/custom-icons/home-8-icon-02.svg",
-      title: "Discover Data Everywhere",
+      title: "Always available",
     },
     {
       order: "order-2 sm:order-1 lg:order-0",
       icon: "/assets/images/custom-icons/home-8-icon-03.svg",
-      title: "Enrich Data with Context",
-    },
-    {
-      order: "order-1 lg:order-0",
-      icon: "/assets/images/custom-icons/home-8-icon-07.svg",
-      title: "Risk Management",
-    },
-    {
-      order: "order-3 lg:order-0",
-      icon: "/assets/images/custom-icons/home-8-icon-05.svg",
-      title: "Privacy Compliance",
-    },
-    {
-      order: "order-2 lg:order-0",
-      icon: "/assets/images/custom-icons/home-8-icon-06.svg",
-      title: "Third-Party Management",
-    },
+      title: "Trackable progress",
+    }
+    // {
+    //   order: "order-1 lg:order-0",
+    //   icon: "/assets/images/custom-icons/home-8-icon-07.svg",
+    //   title: "Risk Management",
+    // },
+    // {
+    //   order: "order-3 lg:order-0",
+    //   icon: "/assets/images/custom-icons/home-8-icon-05.svg",
+    //   title: "Privacy Compliance",
+    // },
+    // {
+    //   order: "order-2 lg:order-0",
+    //   icon: "/assets/images/custom-icons/home-8-icon-06.svg",
+    //   title: "Third-Party Management",
+    // },
   ];
   
   export const features10 = [

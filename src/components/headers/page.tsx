@@ -92,14 +92,14 @@ const Header: React.FC<HeaderProps> = ({ staticPosition = false }) => {
                         alt="Lexend"
                         width={128}
                         height={34}
-                        src="/assets/images/common/logo-new-light.svg"
+                        src="/assets/images/common/prepzo-dark.svg"
                       />
                       <Image
                         className="d-none dark:d-block"
                         alt="Lexend"
                         width={128}
                         height={34}
-                        src="/assets/images/common/logo-new-dark.svg"
+                        src="/assets/images/common/prepzo-light.svg"
                       />
                     </Link>
                   </div>

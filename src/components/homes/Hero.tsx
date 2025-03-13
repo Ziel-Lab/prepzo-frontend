@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import TyperComponent from "@/components/common/TyperComponent";
 import Image from "next/image";
 import { useParallax } from "react-scroll-parallax";
-import LiveKitModal from "@/components/modals/LiveKitModal"; // Adjust the path if needed
+import LiveKitModal from "@/components/modals/LiveKitModal";
+import VideoComponent from "@/components/video-component/videoComponent";
+
 
 const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,9 +46,43 @@ const Hero: React.FC = () => {
                   className="panel vstack items-center gap-2 px-2 text-center"
                   data-anime="targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: easeOutCubic; duration: 500; delay: anime.stagger(100, {start: 200});"
                 >
-                  <span className="fs-7 fw-bold py-narrow px-2 border rounded-pill text-primary dark:text-tertiary">
-                    300+ happy customers
+                  <span className="fs-9 fw-bold py-narrow px-2 border rounded-pill text-primary dark:text-tertiary flex items-center whitespace-nowrap">
+                    <span className="flex -space-x-3 rtl:space-x-reverse">
+                      <Image
+                        src="/assets/images/avatars/memoji1.png"
+                        alt="memoji1"
+                        width={28}
+                        height={28}
+                        decoding="async"
+                        data-nimg="1"
+                        className="size-7 shrink-0 rounded-full border-2 border-surface-primary object-cover dark:border-dark-surface-primary"
+                        style={{ color: "transparent" }}
+                      />
+                      <Image
+                        src="/assets/images/avatars/memoji2.png"
+                        alt="memoji2"
+                        width={28}
+                        height={28}
+                        decoding="async"
+                        data-nimg="1"
+                        className="size-7 shrink-0 rounded-full border-2 border-surface-primary object-cover dark:border-dark-surface-primary"
+                        style={{ color: "transparent" }}
+                      />
+                      <Image
+                        src="/assets/images/avatars/memoji3.png"
+                        alt="memoji3"
+                        width={28}
+                        height={28}
+                        decoding="async"
+                        data-nimg="1"
+                        className="size-7 shrink-0 rounded-full border-2 border-surface-primary object-cover dark:border-dark-surface-primary"
+                        style={{ color: "transparent" }}
+                      />
+                    </span>
+                    <span className="ml-3">300+ happy customers</span>
                   </span>
+
+
                   {/* Headline with dynamic TyperComponent */}
                   <h1 className="h3 sm:h2 md:h1 lg:display-6 lh-lg mb-1 xl:mb-2 mt-2">
                     Your {" "}
@@ -92,30 +128,16 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="panel mt-3 lg:mt-4 min-w-700px text-center">
                     <div className="row child-cols-12 lg:child-cols-4 justify-center gx-0">
-                      <div>
-                        <div className="hstack justify-center gap-1">
-                          <span className="icon mb-narrow">
-                            <Image
-                              className="w-24px dark:d-none"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/icon-08.svg"
-                            />
-                            <Image
-                              className="w-24px d-none dark:d-block"
-                              alt="icon"
-                              width={24}
-                              height={24}
-                              src="assets/images/custom-icons/dark-icon-08.svg"
-                            />
-                          </span>
-                          <span className="fs-7 fw-medium mb-narrow text-inherit">
-                            AI-Powered Interview Coach
-                          </span>
-                        </div>
-                      </div>
                       {/* Additional columns or icons can be added here */}
+                      <span className="fs-7 fw-medium mb-narrow text-inherit">
+                            🔹 Personal Dashboard
+                      </span>
+                      <span className="fs-7 fw-medium mb-narrow text-inherit">
+                            🔹 Personal Dashboard
+                      </span>
+                      <span className="fs-7 fw-medium mb-narrow text-inherit">
+                            🔹 Real-time Career Insights
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -129,17 +151,9 @@ const Hero: React.FC = () => {
                   className="panel max-w-1000px mx-auto mt-2 rounded lg:rounded-1-5 xl:rounded-2 border border-dark contrast-shadow-lg overflow-hidden"
                   data-anime="onscroll: .hero-header; onscroll-trigger: 0.5; translateY: [-80, 0]; scale: [0.8, 1]; easing: linear;"
                 >
-                  <video
-                    preload="auto"
-                    data-uc-video="autoplay: true;"
-                    playsInline
-                    muted
-                    loop
-                    autoPlay
-                    poster="assets/images/media/lexend-home-7.png"
-                    src="/assets/images/media/lexend-home-7.webm"
-                    title="Video title"
-                  />
+                <Suspense fallback={<p>Loading video...</p>}>
+                  <VideoComponent />
+                </Suspense>
                 </div>
               </div>
             </div>

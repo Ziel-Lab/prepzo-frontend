@@ -1,33 +1,22 @@
 export const testimonials = [
     {
-      quote: `“Most of our time used to be taken up by administrative work whereas now we can focus on
-        building out programs to help our employees. 
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Quas nisi consectetur adipisci eaque. Porro,
-        atque.”`,
-      name: "Mark Zellers",
-      position: "Director of Human Resources.",
+      quote: `“This AI coach made job searching stress-free. 
+      It felt like talking to a wise friend who genuinely cared.”`,
+      name: "Lena M.",
+      position: "UX Designer @ Google",
       imgSrc: "/assets/images/portrait/01.jpg",
     },
     {
-      quote: `“I can create a custom proposal with dynamic pricing
-        tables, and get approval from my boss all within 36
-        minutes and looks fantastic.
-        Dolor sit amet consectetur adipisicing elit. Quas
-        nisi consectetur adipisci eaque. Porro, atque.”`,
-      name: "André Garcia",
-      position: "Client Success Manager",
+      quote: `“Negotiated a 20% salary boost thanks to tailored advice from my AI mentor. Incredible!”`,
+      name: "David R.",
+      position: "Developer @ Stripe",
       imgSrc: "/assets/images/portrait/02.jpg",
     },
     {
-      quote: `“This powerful tool eliminates the need to leave
-        Salesforce to get things done, 
-        quas libero placeat voluptates sed sequi? Corporis,
-        earum vitae. 
-        Tempore pariatur dignissimos coming for great tool
-        of repellat quae a eaque culpa iusto fugit.”`,
-      name: "Matt Henderson",
-      position: "Director of Sales Operations",
+      quote: `Career advice that's actually smart, instant, and personal.
+       My professional life is completely transformed.”`,
+      name: "Ayesha T.",
+      position: "Product Manager @ Meta",
       imgSrc: "/assets/images/portrait/03.jpg",
     },
   ];

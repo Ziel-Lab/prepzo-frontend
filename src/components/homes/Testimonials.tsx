@@ -32,7 +32,7 @@ const Testimonials: React.FC = () => {
           <div className="section-inner panel">
             <div className="panel vstack justify-center items-center gap-4 sm:gap-6 xl:gap-8">
               <h2 className="h4 sm:h3 lg:h2 m-0 text-center max-w-650px mx-auto">
-                See what our{" "}
+                ⭐️ See what our{" "}
                 <span className="px-1 bg-tertiary text-primary">
                   happy users
                 </span>{" "}

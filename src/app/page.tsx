@@ -27,10 +27,10 @@ const Page: React.FC = () => {
         <div id="wrapper" className="wrap">
           <Hero />
           <Brands />
-          <Features />
+          {/* <Features /> */}
           <Solutions />
           <Pricing />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Faqs />
           <Blogs />
           <Cta />
