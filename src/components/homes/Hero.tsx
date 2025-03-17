@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import TyperComponent from "@/components/common/TyperComponent";
 import Image from "next/image";
 import { useParallax } from "react-scroll-parallax";
-import VideoComponent from "@/components/video-component/videoComponent";
 import LiveKitPage from "@/components/livekit/LiveKitPage"; // adjust the import path as needed
 
 const Hero: React.FC = () => {

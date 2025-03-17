@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
-import { LiveKitRoom, AgentState } from "@livekit/components-react";
+import { LiveKitRoom } from "@livekit/components-react";
 import "@livekit/components-styles";
 import SimpleVoiceAssistant from "@/components/livekit/SimpleVoiceAssistant";
 import { MediaDeviceFailure } from "livekit-client";
@@ -14,7 +14,6 @@ interface LiveKitPageProps {
 const LiveKitPage: React.FC<LiveKitPageProps> = ({ onClose }) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [connectionDetails, updateConnectionDetails] = useState<ConnectionDetails | undefined>(undefined);
-  const [agentState, setAgentState] = useState<AgentState>("disconnected");
 
   const onDeviceFailure = (error?: MediaDeviceFailure) => {
     console.error(error);
@@ -63,7 +62,17 @@ const LiveKitPage: React.FC<LiveKitPageProps> = ({ onClose }) => {
     >
       <div className="content-container" style={{ width: "100%", height: "calc(100% - 3rem)" }}>
         {!connectionDetails ? (
-          <div className="loading-container" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", fontSize: "1.2rem", color: "#666" }}>
+          <div
+            className="loading-container"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100%",
+              fontSize: "1.2rem",
+              color: "#666",
+            }}
+          >
             Loading...
           </div>
         ) : (
@@ -83,14 +92,24 @@ const LiveKitPage: React.FC<LiveKitPageProps> = ({ onClose }) => {
             }}
             className="w-full h-full flex flex-col"
           >
-            <SimpleVoiceAssistant onStateChange={setAgentState} />
+            <SimpleVoiceAssistant onStateChange={() => {}} />
           </LiveKitRoom>
         )}
       </div>
-      <div className="page-close-container" style={{ textAlign: "center", marginTop: "1rem" }}>
+      <div
+        className="page-close-container"
+        style={{ textAlign: "center", marginTop: "1rem" }}
+      >
         <button
           onClick={onClose}
-          style={{ padding: "0.5rem 1rem", borderRadius: "4px", border: "none", background: "#333", color: "#fff", cursor: "pointer" }}
+          style={{
+            padding: "0.5rem 1rem",
+            borderRadius: "4px",
+            border: "none",
+            background: "#333",
+            color: "#fff",
+            cursor: "pointer",
+          }}
         >
           Close
         </button>

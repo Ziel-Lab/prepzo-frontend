@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useCallback, useEffect } from "react";
-import { LiveKitRoom, AgentState } from "@livekit/components-react";
+import { LiveKitRoom } from "@livekit/components-react";
 import "@livekit/components-styles";
 import SimpleVoiceAssistant from "@/components/livekit/SimpleVoiceAssistant";
 import { MediaDeviceFailure } from "livekit-client";
@@ -13,7 +13,6 @@ interface LiveKitModalProps {
 const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [connectionDetails, updateConnectionDetails] = useState<ConnectionDetails | undefined>(undefined);
-  const [agentState, setAgentState] = useState<AgentState>("disconnected");
 
   const onDeviceFailure = (error?: MediaDeviceFailure) => {
     console.error(error);
@@ -81,7 +80,7 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
               }}
               className="w-full h-full flex flex-col"
             >
-              <SimpleVoiceAssistant onStateChange={setAgentState} />
+              <SimpleVoiceAssistant onStateChange={() => {}} />
             </LiveKitRoom>
           )}
         </div>
