@@ -1,28 +1,27 @@
 .voice-assistant-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* Ensures full width */
   width: 100%;
-  height: 100%; /* fills the modal height */
+  height: 100%; /* Fills the modal height */
   padding: 20px;
   box-sizing: border-box;
 }
 
 .visualizer-container {
   width: 100%;
-  /* Instead of a fixed height, you might use a percentage so it scales with the modal */
   height: 40%;
   margin: 0 auto;
 }
 
 .control-section {
   width: 100%;
-  margin: 20px auto 0;
+  margin: 20px 0 0;
 }
 
 .conversation {
   padding: 20px;
-  flex: 1;  /* allows conversation to fill the remaining vertical space */
+  flex: 1;  /* Allows conversation to fill the remaining vertical space */
   overflow-y: auto;
   width: 100%;
   border: 1px solid #eaeaea;

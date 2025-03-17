@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React , { useState} from "react";
 import Image from "next/image";
+import LiveKitModal from "@/components/modals/LiveKitModal";
 
 const Cta: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div
       id="uc_cta"
@@ -29,26 +31,35 @@ const Cta: React.FC = () => {
             width={19}
             height={29}
           />
-          <h2 className="h3 xl:display-6 lh-lg m-0 max-w-md mx-auto text-inherit">
+          <h2 className="h2 xl:display-6 lh-lg m-0 max-w-md mx-auto text-inherit">
             <span className="px-1 bg-tertiary text-primary d-block lg:d-inline-block">
-              AI automation
+              Personalized, empathetic coaching
             </span>{" "}
-            solutions!
+            to power up your professional life.
           </h2>
           <p className="fs-6 sm:fs-5">
-            See how we help your team solve today’s biggest challenges.
+            No more generic career advice. Experience instant clarity, actionable insights, and measurable growth—all through 
+            friendly, intelligent conversations.
           </p>
-          <div className="vstack md:hstack justify-center gap-2 mt-3">
+          <div
+            className="vstack md:hstack justify-center gap-2 mt-3"
+            style={{ transform: "translateY(0px)", opacity: 1 }}
+          >
             <a
               href="#"
-              className="btn btn-md xl:btn-lg btn-tertiary text-primary px-3 lg:px-5 fw-bold hover:contrast-shadow"
+              className="btn btn-md xl:btn-lg btn-alt-dark border-dark px-3 lg:px-5 fw-bold contrast-shadow-sm hover:contrast-shadow"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsModalOpen(true);
+              }}
             >
-              Start free trial with email
+              ✨ Start Talking to Your AI Coach ✨
             </a>
           </div>
           <span className="fs-7 mt-1">No credit card required!</span>
         </div>
       </div>
+      {isModalOpen && <LiveKitModal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };

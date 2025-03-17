@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useCallback } from "react";
-import { LiveKitRoom, RoomAudioRenderer, AgentState } from "@livekit/components-react";
+import React, { useState, useCallback, useEffect } from "react";
+import { LiveKitRoom, AgentState } from "@livekit/components-react";
 import "@livekit/components-styles";
 import SimpleVoiceAssistant from "@/components/livekit/SimpleVoiceAssistant";
-import { NoAgentNotification } from "@/components/livekit/NoAgentNotification";
 import { MediaDeviceFailure } from "livekit-client";
 import type { ConnectionDetails } from "@/app/api/connection-details/route";
 
@@ -48,6 +47,11 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
     updateConnectionDetails(connectionDetailsData);
   }, []);
 
+  // Automatically fetch connection details when the modal mounts.
+  useEffect(() => {
+    onConnectButtonClicked();
+  }, [onConnectButtonClicked]);
+
   return (
     <div
       className="modal-overlay"
@@ -59,11 +63,7 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="content-container">
           {!connectionDetails ? (
-            <div className="ready-container">
-              <button onClick={onConnectButtonClicked} className="ready-button">
-                Ready!
-              </button>
-            </div>
+            <div className="loading-container">Loading...</div>
           ) : (
             <LiveKitRoom
               token={connectionDetails.participantToken}
@@ -72,12 +72,16 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
               audio={true}
               video={false}
               onMediaDeviceFailure={onDeviceFailure}
-              onDisconnected={() => updateConnectionDetails(undefined)}
-              className="grid grid-rows-[2fr_1fr] items-center"
+              onDisconnected={() => {
+                updateConnectionDetails(undefined);
+                if (window.confirm("Do you want to catch up with us over email?")) {
+                  // Optionally add logic for email follow-up here.
+                }
+                onClose();
+              }}
+              className="w-full h-full flex flex-col"
             >
               <SimpleVoiceAssistant onStateChange={setAgentState} />
-              <RoomAudioRenderer />
-              <NoAgentNotification state={agentState} />
             </LiveKitRoom>
           )}
         </div>
@@ -112,8 +116,8 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
           flex-direction: column;
         }
         .content-container {
-          flex: 1 1 auto;
-          overflow-y: auto;
+          flex: 1;
+          overflow: hidden;
         }
         .modal-close-container {
           position: absolute;
@@ -128,14 +132,13 @@ const LiveKitModal: React.FC<LiveKitModalProps> = ({ onClose }) => {
           color: #fff;
           cursor: pointer;
         }
-        /* New CSS to center the Ready container */
-        .ready-container {
+        .loading-container {
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
           height: 100%;
-          text-align: center;
+          font-size: 1.2rem;
+          color: #666;
         }
         @media (max-width: 768px) {
           .modal-content {

@@ -406,77 +406,79 @@ export const posts = [
   export const slidesData = [
     {
       id: 38,
-      imgSrc: "/assets/images/blog/post-4.jpg",
-      title: "Unlock productivity potential with AI",
+      imgSrc: "/assets/images/blog/interview-coach.jpeg",
+      title: "Elevate Your Career with Prepzo's AI Interview Coach",
       excerpt:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
+        "Experience one-on-one mentorship and AI-driven interview preparation tailored to unlock your potential.",
     },
     {
       id: 39,
-      imgSrc: "/assets/images/blog/post-5.jpg",
-      title: "Automate as fast as you can type with AI",
+      imgSrc: "/assets/images/blog/ai-insights.jpeg",
+      title: "Master the Art of Interviewing with AI Insights",
       excerpt:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get started.",
+        "Gain real-time feedback and personalized strategies from our AI interview coach to ace every interview.",
     },
     {
       id: 40,
-      imgSrc: "/assets/images/blog/post-6.jpg",
-      title: "Intuitive & powerful AI automation app",
+      imgSrc: "/assets/images/blog/personal-mentors.jpeg",
+      title: "Personal Mentors Meet AI: The Future of Career Coaching",
       excerpt:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and managing them.",
+        "Combine the wisdom of seasoned mentors with the power of AI for a holistic career advancement journey.",
     },
     {
       id: 41,
-      imgSrc: "/assets/images/blog/img-01.jpg",
-      title: "Team solve today’s biggest challenges",
+      imgSrc: "/assets/images/blog/prepzo-career-success.jpeg",
+      title: "Prepzo.co: Where AI Meets Career Success",
       excerpt:
-        "Join the thousands of satisfied users and take your business to the next level today and the power.",
+        "Join thousands transforming their career paths with our innovative blend of AI and expert mentorship.",
     },
     {
       id: 42,
-      imgSrc: "/assets/images/blog/img-02.jpg",
-      title: "Leading work from tasks management",
+      imgSrc: "/assets/images/blog/ai-voice-assistant.jpeg",
+      title: "AI Voice Assistant for Your Job Prep Needs",
       excerpt:
-        "Help you keep track of leads, contacts, and deals, making it easier to nurture and convert.",
+        "Harness the power of AI voice assistance to practice and refine your interview skills anytime, anywhere.",
     },
   ];
+  
   export const slidesData2 = [
     {
       id: 43,
-      imgSrc: "/assets/images/blog/post-4.jpg",
-      title: "Unlock productivity potential with AI",
+      imgSrc: "/assets/images/blog/virtual-mentor.jpeg",
+      title: "Prepzo’s AI Interview Coach: Your Virtual Mentor",
       excerpt:
-        "How do you create compelling presentations that wow your colleagues and impress your managers?",
+        "Access a personalized AI coach that prepares you for challenging interview questions and scenarios.",
     },
     {
       id: 44,
-      imgSrc: "/assets/images/blog/post-5.jpg",
-      title: "Automate as fast as you can type with AI",
+      imgSrc: "/assets/images/blog/ai-feedback.jpeg",
+      title: "Transform Interviews with AI-Powered Feedback",
       excerpt:
-        "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here's how to get started.",
+        "Get detailed insights and tips to improve your interview performance with our cutting-edge AI feedback system.",
     },
     {
       id: 45,
-      imgSrc: "/assets/images/blog/post-6.jpg",
-      title: "Intuitive & powerful AI automation app",
+      imgSrc: "/assets/images/blog/ai-voice-assistant.jpeg",
+      title: "Enhance Your Confidence with AI Voice Assistant",
       excerpt:
-        "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and managing them.",
+        "Practice your responses and build confidence using our interactive AI voice assistant tailored for interviews.",
     },
     {
       id: 46,
-      imgSrc: "/assets/images/blog/img-01.jpg",
-      title: "Team solve today’s biggest challenges",
+      imgSrc: "/assets/images/blog/prepzo-career-success.jpeg",
+      title: "Unlock Career Growth with Personalized Mentorship",
       excerpt:
-        "Join the thousands of satisfied users and take your business to the next level today and the power.",
+        "Discover career-changing advice from both experienced mentors and our intelligent AI, driving your success.",
     },
     {
       id: 47,
-      imgSrc: "/assets/images/blog/img-02.jpg",
-      title: "Leading work from tasks management",
+      imgSrc: "/assets/images/blog/interview-coach.jpeg",
+      title: "Prepzo.co: The Future of Interview Coaching",
       excerpt:
-        "Help you keep track of leads, contacts, and deals, making it easier to nurture and convert.",
+        "Revolutionize your job search with our state-of-the-art platform that merges technology with expert career guidance.",
     },
   ];
+  
   
   export const blogPosts6 = [
     {

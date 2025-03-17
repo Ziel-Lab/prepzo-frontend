@@ -7,7 +7,6 @@ import Brands from "@/components/homes/Brands";
 import Cta from "@/components/homes/Cta";
 import Faqs from "@/components/homes/Faqs";
 import Hero from "@/components/homes/Hero";
-import Pricing from "@/components/homes/Pricing";
 import Solutions from "@/components/homes/Solutions";
 
 
@@ -28,7 +27,7 @@ const Page: React.FC = () => {
           <Brands />
           {/* <Features /> */}
           <Solutions />
-          <Pricing />
+          {/* <Pricing /> */}
           {/* <Testimonials /> */}
           <Faqs />
           <Blogs />
