@@ -1,5 +1,5 @@
 "use client";
-import { closeContactModal } from "@/utlis/toggleContactModal";
+import { closeContactModal } from "@/utils/toggleContactModal";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 

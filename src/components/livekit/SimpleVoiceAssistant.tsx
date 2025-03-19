@@ -32,7 +32,7 @@ export interface TranscriptionMessage extends TranscriptionSegment {
   type: "agent" | "user";
 }
 
-// Updated Message component with Framer Motion animations and Hume.ai–like styling.
+// Updated Message component with Framer Motion animations.
 const Message: React.FC<{ type: "agent" | "user"; text: string }> = ({ type, text }) => {
   return (
     <motion.div
@@ -54,7 +54,6 @@ const Message: React.FC<{ type: "agent" | "user"; text: string }> = ({ type, tex
 
 /**
  * Custom hook that always calls useTrackTranscription.
- * Provides fallback values using specific types rather than 'any'.
  */
 function useSafeTrackTranscription() {
   const localParticipant = useLocalParticipant();
@@ -70,11 +69,28 @@ function useSafeTrackTranscription() {
 }
 
 const SimpleVoiceAssistant: React.FC<SimpleVoiceAssistantProps> = ({ onStateChange }) => {
-  const { state, agentTranscriptions } = useVoiceAssistant();
+  const { state, agentTranscriptions, audioTrack } = useVoiceAssistant();
   const { segments: userTranscriptions } = useSafeTrackTranscription();
 
   const [messages, setMessages] = useState<TranscriptionMessage[]>([]);
   const transcriptRef = useRef<HTMLDivElement>(null);
+
+  // Let the audio track create and attach its own audio element.
+  useEffect(() => {
+    let attachedAudio: HTMLAudioElement | undefined;
+    if (audioTrack?.publication?.track) {
+      attachedAudio = new Audio();
+      attachedAudio.style.display = "none";
+      audioTrack.publication.track.attach(attachedAudio);
+      document.body.appendChild(attachedAudio);
+    }
+    return () => {
+      if (audioTrack?.publication?.track && attachedAudio) {
+        audioTrack.publication.track.detach(attachedAudio);
+        attachedAudio.remove();
+      }
+    };
+  }, [audioTrack]);
 
   useEffect(() => {
     const agentMessages: TranscriptionMessage[] = agentTranscriptions

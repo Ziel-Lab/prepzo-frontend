@@ -407,3 +407,11 @@ html:not(.uc-dark) {
   justify-content: center;
   align-items: center;
 }
+.hero-bg-light {
+  background-color: #FFFFEA !important;
+}
+
+.dark .hero-bg-dark {
+  background-color: #485e3a !important;
+}
+

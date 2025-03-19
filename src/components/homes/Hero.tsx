@@ -8,19 +8,37 @@ import LiveKitPage from "@/components/livekit/LiveKitPage"; // adjust the import
 
 const Hero: React.FC = () => {
   const [isBackgroundChanged, setIsBackgroundChanged] = useState(false);
+  
   const parallax = useParallax({ scale: [0.85, 1.1] });
 
   useEffect(() => {
     console.log("Hero component mounted");
   }, []);
 
-  // When isBackgroundChanged is true, render the new full-page LiveKit content.
+  // Use Tailwind's dark mode class strategy by checking the <html> element.
+  
+
+  // When background is changed, update the body background color.
+  useEffect(() => {
+    if (isBackgroundChanged) {
+      document.documentElement.classList.add('hero-bg-light');
+      document.documentElement.classList.add('dark:hero-bg-dark');
+    } else {
+      document.documentElement.classList.remove('hero-bg-light');
+      document.documentElement.classList.remove('dark:hero-bg-dark');
+    }
+    return () => {
+      document.documentElement.classList.remove('hero-bg-light');
+      document.documentElement.classList.remove('dark:hero-bg-dark');
+    };
+  }, [isBackgroundChanged]);
+  
+  
+
+  // Render the full-page LiveKit content when background is changed.
   if (isBackgroundChanged) {
     return (
-      <div
-        id="hero_header"
-        style={{ backgroundColor: "#FFFFEA", height: "100vh" }}
-      >
+      <div id="hero_header" style={{ height: "100vh" }}>
         <LiveKitPage onClose={() => setIsBackgroundChanged(false)} />
       </div>
     );
@@ -43,7 +61,6 @@ const Hero: React.FC = () => {
             height={73}
             src="assets/images/vectors/marketing.svg"
           />
-          {/* Additional Image components can be added here */}
         </div>
         <div className="container max-w-xl">
           <div className="section-inner panel">
@@ -61,7 +78,7 @@ const Hero: React.FC = () => {
                         style={{ color: "transparent" }}
                       />
                     </span>
-                    <span className="ml-3">  300+ happy customers</span>
+                    <span className="ml-3">    300+ happy customers</span>
                   </span>
 
                   <h1 className="h3 sm:h2 md:h1 lg:display-6 lh-lg mb-1 xl:mb-2 mt-2">
@@ -106,7 +123,7 @@ const Hero: React.FC = () => {
                   <div className="panel mt-3 lg:mt-4 min-w-700px text-center">
                     <div className="row child-cols-12 lg:child-cols-4 justify-center gx-0">
                       <span className="fs-7 fw-medium mb-narrow text-inherit">
-                        🔹 Personal Dashboard
+                        🔹 AI-Powered Coaching
                       </span>
                       <span className="fs-7 fw-medium mb-narrow text-inherit">
                         🔹 Personal Dashboard

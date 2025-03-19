@@ -96,24 +96,6 @@ const LiveKitPage: React.FC<LiveKitPageProps> = ({ onClose }) => {
           </LiveKitRoom>
         )}
       </div>
-      <div
-        className="page-close-container"
-        style={{ textAlign: "center", marginTop: "1rem" }}
-      >
-        <button
-          onClick={onClose}
-          style={{
-            padding: "0.5rem 1rem",
-            borderRadius: "4px",
-            border: "none",
-            background: "#333",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          Close
-        </button>
-      </div>
     </div>
   );
 };

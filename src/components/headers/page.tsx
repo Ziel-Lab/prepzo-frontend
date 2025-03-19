@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { featurePageLinks, sections} from "@/data/menu";
-import { openMobileMenu } from "@/utlis/toggleMobileMenu";
+import { openMobileMenu } from "@/utils/toggleMobileMenu";
 import Image from "next/image";
 import Link from "next/link";
 import ModalVideo from "../common/ModalVideo";

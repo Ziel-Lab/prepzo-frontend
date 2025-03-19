@@ -9,7 +9,8 @@ const Brands: React.FC = () => {
   return (
     <div
       id="companies_sponsores"
-      className="companies-sponsores section panel overflow-hidden"
+      className="companies-sponsores section panel overflow-hidden mb-12 bg-white"
+      style={{ paddingBottom: "50px" }} // Increased bottom padding to 30px
     >
       <div className="section-outer panel">
         <div className="container sm:max-w-lg xl:max-w-xl">

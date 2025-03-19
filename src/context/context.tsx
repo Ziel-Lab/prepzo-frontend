@@ -2,7 +2,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 import { products } from "@/data/products";
-import { openCart } from "@/utlis/toggleCart";
+import { openCart } from "@/utils/toggleCart";
 import { usePathname } from "next/navigation";
 
 // Define a Product interface (adjust fields as necessary)

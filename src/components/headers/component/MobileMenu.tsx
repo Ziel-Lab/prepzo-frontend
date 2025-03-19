@@ -1,7 +1,7 @@
 "use client";
 import { useContextElement } from "@/context/context";
 import { icons, menuItems } from "@/data/menu";
-import { closeMobileMenu } from "@/utlis/toggleMobileMenu";
+import { closeMobileMenu } from "@/utils/toggleMobileMenu";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

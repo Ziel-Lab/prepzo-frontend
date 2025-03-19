@@ -1,5 +1,5 @@
 "use client";
-import { closeSearchModal } from "@/utlis/toggleSearchModal";
+import { closeSearchModal } from "@/utils/toggleSearchModal";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 

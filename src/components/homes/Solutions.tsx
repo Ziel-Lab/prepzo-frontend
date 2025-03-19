@@ -1,5 +1,5 @@
 "use client";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { features9 } from "@/data/features";
 import Image from "next/image";
 import LiveKitModal from "@/components/modals/LiveKitModal";
@@ -15,7 +15,7 @@ const Solutions: React.FC = () => {
   return (
     <div
       id="key_features"
-      className="key-features section panel overflow-hidden uc-dark lg:px-6"
+      className="key-features section panel overflow-hidden uc-dark lg:px-6 mt-12" // Added top margin
     >
       <div
         className="section-outer panel py-4 md:py-6 xl:py-10 bg-secondary dark:bg-primary-700 dark:text-white dark:text-opacity-60 rounded-2 lg:rounded-4"
@@ -114,21 +114,23 @@ const Solutions: React.FC = () => {
                 Say goodbye to Freezing in your interview.
               </p>
               <div
-                    className="vstack md:hstack justify-center gap-2 mt-3"
-                    style={{ transform: "translateY(0px)", opacity: 1 }}
-                  >
-                    <a
-                      href="#"
-                      className="btn btn-md xl:btn-lg btn-alt-dark border-dark px-3 lg:px-5 fw-bold contrast-shadow-sm hover:contrast-shadow"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsModalOpen(true);
-                      }}
-                    >
-                      ✨ Start Talking to Your AI Coach ✨
-                    </a>
-                  </div>
-              <span className="fs-7 mt-1">No Registration required for a free trial!</span>
+                className="vstack md:hstack justify-center gap-2 mt-3"
+                style={{ transform: "translateY(0px)", opacity: 1 }}
+              >
+                <a
+                  href="#"
+                  className="btn btn-md xl:btn-lg btn-alt-dark border-dark px-3 lg:px-5 fw-bold contrast-shadow-sm hover:contrast-shadow"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsModalOpen(true);
+                  }}
+                >
+                  ✨ Start Talking to Your AI Coach ✨
+                </a>
+              </div>
+              <span className="fs-7 mt-1">
+                No Registration required for a free trial!
+              </span>
             </div>
           </div>
         </div>

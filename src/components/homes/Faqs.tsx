@@ -28,7 +28,7 @@ const Faqs: React.FC<FaqsProps> = ({
   const displayedItems = accordionItems.slice(0, visibleQuestions);
 
   return (
-    <div id="faq" className="faq section panel">
+    <div id="faq" className="faq section panel" style={{ paddingTop: "50px" }}>
       <div className={ctaParentClass}>
         <div className="container lg:max-w-lg">
           <div

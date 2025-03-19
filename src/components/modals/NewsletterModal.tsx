@@ -1,5 +1,5 @@
 "use client";
-import { closeNewsletterModal } from "@/utlis/toggleNewsletterModal";
+import { closeNewsletterModal } from "@/utils/toggleNewsletterModal";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef } from "react";
